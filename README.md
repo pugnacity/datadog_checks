@@ -31,11 +31,6 @@ This modules requieres the datadog agent module
 
 ### Beginning with datadog_checks
 
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
 
 ## Usage
 
@@ -46,3 +41,4 @@ for upgrading, you may wish to include an additional section here: Upgrading
 ## Limitations
 
 Only tested with Debian 7.8
+There is no documentation
