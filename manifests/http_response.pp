@@ -32,7 +32,8 @@
 class datadog_checks::http_response {
 
   concat { '/etc/dd-agent/conf.d/http_response.yaml':
-    ensure => present,
+    ensure  => present,
+    require => [Class['datadog_agent']],
   }
   concat::fragment { 'header':
     target  => '/etc/dd-agent/conf.d/http_response.yaml',
@@ -45,10 +46,11 @@ instances:
     notify  => Service[$datadog_agent::params::service_name],
   }
   file { '/etc/dd-agent/checks.d/http_response.py':
-    ensure => present,
-    source => "puppet:///modules/${module_name}/http_response.py",
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0755',
+    ensure  => present,
+    source  => "puppet:///modules/${module_name}/http_response.py",
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0755',
+    require => [Class['datadog_agent']],
   }
 }
